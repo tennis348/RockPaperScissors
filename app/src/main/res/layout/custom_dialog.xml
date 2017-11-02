@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="@string/input_the_names"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Player1"
+        android:inputType="textPersonName"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Player2"
+        android:inputType="textPersonName"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:background="#c2185b"
+        android:text="✔"
+        android:textSize="28sp" />
+
+</LinearLayout>

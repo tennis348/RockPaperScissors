@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/paperScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:gravity="center_horizontal"
+        android:text="Paper : "
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/rockScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:gravity="center_horizontal"
+        android:text="Rock : "
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/scissorScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:gravity="center_horizontal"
+        android:text="Scissor: "
+        android:textSize="28sp" />
+
+</LinearLayout>
