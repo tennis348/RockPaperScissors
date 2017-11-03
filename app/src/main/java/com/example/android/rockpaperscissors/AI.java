@@ -26,6 +26,9 @@ public class AI extends AppCompatActivity {
     int paper_data;
     int rock_data;
     int scissor_data;
+    int paper_count;
+    int rock_count;
+    int scissor_count;
     private SharedPreferences preferencesSettings;
     private SharedPreferences.Editor preferenceEditor;
 
@@ -37,55 +40,74 @@ public class AI extends AppCompatActivity {
         paper_score = getIntent().getIntExtra("paper", 0);
         rock_score = getIntent().getIntExtra("rock", 0);
         scissor_score = getIntent().getIntExtra("scissor", 0);
+        paper_count = getIntent().getIntExtra("paper_count", 0);
+        rock_count = getIntent().getIntExtra("rock_count", 0);
+        scissor_count = getIntent().getIntExtra("scissor_count", 0);
 
-        paper_data = paper_score / 5;
-        rock_data = rock_score / 5;
-        scissor_data = scissor_score / 5;
+//        paper_data = paper_score / 5;
+//        rock_data = rock_score / 5;
+//        scissor_data = scissor_score / 5;
 
         TextView textView = (TextView) findViewById(R.id.paperScore);
         TextView textView1 = (TextView) findViewById(R.id.rockScore);
         TextView textView2 = (TextView) findViewById(R.id.scissorScore);
 
-        textView.setText(" " + paper_data);
-        textView1.setText(" " + rock_data);
-        textView2.setText(" " + scissor_data);
+        textView.setText(" " + paper_count);
+        textView1.setText(" " + rock_count);
+        textView2.setText(" " + scissor_count);
 
     }
+
 
     @Override
     protected void onPause() {
         super.onPause();
 
-        if ((paper_data != 0) && (paper_data >= 1)) {
+
+        if ((paper_count != 0) && (paper_count >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
-            preferenceEditor.putInt("paper_value", paper_data);
+            preferenceEditor.putInt("paperCount", paper_count);
             preferenceEditor.commit();
-
             TextView paper = (TextView) findViewById(R.id.paperScore);
-            paper.setText(" " + paper_data);
+            paper.setText(" " + paper_count);
         }
 
-        Toast.makeText(this, "the value is " + paper_data, Toast.LENGTH_SHORT).show();
+//        if ((paper_data != 0) && (paper_data >= 1)) {
+//            preferencesSettings = getPreferences(MODE_PRIVATE);
+//            preferenceEditor = preferencesSettings.edit();
+//            preferenceEditor.putInt("paper_value", paper_data);
+//            preferenceEditor.commit();
+//            TextView paper = (TextView) findViewById(R.id.paperScore);
+//            paper.setText(" " + paper_data);
+//        }
 
-        if ((rock_data != 0) && (rock_data >= 1)) {
+//        if ((rock_data != 0) && (rock_data >= 1)) {
+//            preferencesSettings = getPreferences(MODE_PRIVATE);
+//            preferenceEditor = preferencesSettings.edit();
+//            preferenceEditor.putInt("rock_value", rock_data);
+//            preferenceEditor.commit();
+//            TextView rock = (TextView) findViewById(R.id.rockScore);
+//            rock.setText(" " + rock_data);
+//        }
+
+        if ((rock_count != 0) && (rock_count >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
-
-            preferenceEditor.putInt("rock_value", rock_data);
-
+            preferenceEditor.putInt("rockCount", rock_count);
             preferenceEditor.commit();
             TextView rock = (TextView) findViewById(R.id.rockScore);
-            rock.setText(" " + rock_data);
+            rock.setText(" " + rock_count);
         }
 
-        if ((scissor_data != 0) && (scissor_data >= 1)) {
+
+        if ((scissor_count != 0) && (scissor_count >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
-            preferenceEditor.putInt("scissor_value", scissor_data);
+            preferenceEditor.putInt("scissorCount", scissor_count);
             preferenceEditor.commit();
-            TextView scissor = (TextView) findViewById(R.id.paperScore);
-            scissor.setText(" " + scissor_data);
+            TextView scissor = (TextView) findViewById(R.id.scissorScore);
+            scissor.setText(" " + scissor_count);
         }
     }
 
@@ -94,9 +116,9 @@ public class AI extends AppCompatActivity {
         super.onResume();
 
         preferencesSettings = getPreferences(MODE_PRIVATE);
-        int paper_final_data = preferencesSettings.getInt("paper_value", 0);
-        int rock_final_data = preferencesSettings.getInt("rock_value", 0);
-        int scissor_final_data = preferencesSettings.getInt("scissor_value", 0);
+        int paper_final_data = preferencesSettings.getInt("paperCount", 0);
+        int rock_final_data = preferencesSettings.getInt("rockCount", 0);
+        int scissor_final_data = preferencesSettings.getInt("scissorCount", 0);
 
         TextView paper_text = (TextView) findViewById(R.id.paperScore);
         paper_text.setText(" " + paper_final_data);

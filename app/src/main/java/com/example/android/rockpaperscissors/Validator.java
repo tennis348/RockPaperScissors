@@ -18,6 +18,9 @@ import static com.example.android.rockpaperscissors.R.id.player2;
 
 public class Validator extends AppCompatActivity {
 
+    static int paper_count = 0;
+    static int rock_count = 0;
+    static int scissor_count = 0;
     String fancy2 = "blocked";
     String fancy3 = "crushed";
 
@@ -138,6 +141,9 @@ public class Validator extends AppCompatActivity {
                 intent1.putExtra("paper", paper1);
                 intent1.putExtra("rock", rock1);
                 intent1.putExtra("scissor", scissor1);
+                intent1.putExtra("paper_count", paper_count++);
+                intent1.putExtra("rock_count", rock_count++);
+                intent1.putExtra("scissor_count", scissor_count++);
                 startActivity(intent1);
             }
         });
