@@ -129,15 +129,16 @@ public class Validator extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Validator.this, MainActivity.class);
-                intent.putExtra("paper", paper1);
-                intent.putExtra("rock", rock1);
-                intent.putExtra("scissor", scissor1);
-                startActivity(intent);
+//                Intent intent = new Intent(Validator.this, MainActivity.class);
+//                intent.putExtra("paper", paper1);
+//                intent.putExtra("rock", rock1);
+//                intent.putExtra("scissor", scissor1);
+//                startActivity(intent);
                 Intent intent1 = new Intent(Validator.this, AI.class);
-//                intent1.putExtra("paper", paper1);
-//                intent1.putExtra("rock", rock1);
-//                intent1.putExtra("scissor", scissor1);
+                intent1.putExtra("paper", paper1);
+                intent1.putExtra("rock", rock1);
+                intent1.putExtra("scissor", scissor1);
+                startActivity(intent1);
             }
         });
 

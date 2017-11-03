@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AI.class);
-                intent.putExtra("paper", paper_score);
-                intent.putExtra("rock", rock_score);
-                intent.putExtra("scissor", scissor_score);
+//                intent.putExtra("paper", paper_score);
+//                intent.putExtra("rock", rock_score);
+//                intent.putExtra("scissor", scissor_score);
                 startActivity(intent);
             }
         });

@@ -19,15 +19,13 @@ import static android.media.MediaCodec.MetricsConstants.MODE;
 
 public class AI extends AppCompatActivity {
 
+    public static final int MODE_PRIVATE = 0;
     int paper_score;
     int rock_score;
     int scissor_score;
-
     int paper_data;
     int rock_data;
     int scissor_data;
-
-    public static final int MODE_PRIVATE = 0;
     private SharedPreferences preferencesSettings;
     private SharedPreferences.Editor preferenceEditor;
 
@@ -58,45 +56,36 @@ public class AI extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        if (paper_data != 0) {
+        if ((paper_data != 0) && (paper_data >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
             preferenceEditor.putInt("paper_value", paper_data);
-//            preferenceEditor.putInt("rock_value", rock_data);
-
             preferenceEditor.commit();
+
             TextView paper = (TextView) findViewById(R.id.paperScore);
             paper.setText(" " + paper_data);
-//            TextView rock = (TextView) findViewById(R.id.rockScore);
-//            rock.setText(" " + rock_data);
-
-            Toast.makeText(this, "the value is " + paper_data, Toast.LENGTH_SHORT).show();
         }
 
-        if (rock_data != 0) {
+        Toast.makeText(this, "the value is " + paper_data, Toast.LENGTH_SHORT).show();
+
+        if ((rock_data != 0) && (rock_data >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
-//            preferenceEditor.putInt("paper_value", paper_data);
+
             preferenceEditor.putInt("rock_value", rock_data);
 
             preferenceEditor.commit();
-//            TextView paper = (TextView) findViewById(R.id.paperScore);
-//            paper.setText(" " + paper_data);
             TextView rock = (TextView) findViewById(R.id.rockScore);
             rock.setText(" " + rock_data);
         }
 
-        if (scissor_data != 0){
+        if ((scissor_data != 0) && (scissor_data >= 1)) {
             preferencesSettings = getPreferences(MODE_PRIVATE);
             preferenceEditor = preferencesSettings.edit();
             preferenceEditor.putInt("scissor_value", scissor_data);
-//            preferenceEditor.putInt("rock_value", rock_data);
-
             preferenceEditor.commit();
             TextView scissor = (TextView) findViewById(R.id.paperScore);
             scissor.setText(" " + scissor_data);
-//            TextView rock = (TextView) findViewById(R.id.rockScore);
-//            rock.setText(" " + rock_data);
         }
     }
 
@@ -118,6 +107,5 @@ public class AI extends AppCompatActivity {
         TextView scissor_text = (TextView) findViewById(R.id.scissorScore);
         scissor_text.setText(" " + scissor_final_data);
 
-        Toast.makeText(this, "Did I get restored?", Toast.LENGTH_SHORT).show();
     }
 }
